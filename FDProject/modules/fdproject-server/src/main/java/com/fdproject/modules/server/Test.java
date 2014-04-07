@@ -1,4 +1,4 @@
-package com.fdproject.modules.fdproject.server;
+package com.fdproject.modules.server;
 
 import java.util.Date;
 import javax.annotation.PostConstruct;
@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import org.apache.log4j.Logger;
 
-@Path("content")
+@Path("training")
 @Produces("application/json")
 @Consumes("application/json")
 public class Test {
@@ -21,8 +21,9 @@ public class Test {
     }
 
     @POST
-    @Path("/test")
-    public String test() {
-        return "test 1 " + new Date();
+    @Path("/save")
+    public Training test(Training training) {
+        training.setId(training.getId() + " " + new Date());
+        return training;
     }
 }
