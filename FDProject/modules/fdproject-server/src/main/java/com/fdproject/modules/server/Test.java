@@ -3,6 +3,7 @@ package com.fdproject.modules.server;
 import java.util.Date;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,8 +23,14 @@ public class Test {
 
     @POST
     @Path("/save")
-    public Training test(Training training) {
+    public Training save(Training training) {
         training.setId(training.getId() + " " + new Date());
         return training;
+    }
+    
+    @GET
+    @Path("/load")
+    public Double load() {
+        return Math.random();
     }
 }
