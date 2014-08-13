@@ -33,7 +33,7 @@ public class TrainingController {
    public String load() {
       double random = Math.random();
       LOG.debug("/load called, returning random number " + random);
-      return "Hello " + random;
+      return String.valueOf(random);
    }
 
 }
