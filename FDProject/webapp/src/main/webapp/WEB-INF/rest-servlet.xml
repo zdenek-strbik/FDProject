@@ -13,4 +13,6 @@
 
    <mvc:annotation-driven />
 
+   <bean id="corsFilter" class="com.fdproject.modules.server.SimpleCORSFilter" />
+
 </beans>
